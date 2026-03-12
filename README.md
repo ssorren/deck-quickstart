@@ -102,6 +102,17 @@ deck file add-plugins \
   plugins/oidc.yaml
 ```
 
+`deck file add-plugins` lets you inject plugin config into an existing state file without manually editing generated YAML.
+Each plugin file includes one or more `selectors` entries that target where plugins should be attached.
+
+In this repo, `$.services[*]` means "apply these plugins to every Service in the state file".
+You can narrow scope with more specific JSONPath selectors, for example `$.services[*].routes[*]` for all Routes.
+
+Docs:
+
+- add-plugins feature: [Managing plugins with decK](https://developer.konghq.com/deck/file/manipulation/plugins/)
+- selectors syntax (JSONPath): [RFC 9535 JSONPath](https://www.rfc-editor.org/rfc/rfc9535.html)
+
 ### 3) Render `_info.yaml` using environment-driven select tag
 
 ```bash
