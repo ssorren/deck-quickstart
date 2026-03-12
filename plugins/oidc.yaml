@@ -1,0 +1,18 @@
+add-plugins:
+  - selectors:
+      - $.services[*]
+    overwrite: false
+    plugins:
+      - name: openid-connect
+        config:
+          issuer: https://example.okta.com/oauth2/default
+          client_id:
+            - example-client-id
+          client_secret:
+            - example-client-secret
+          scopes_required:
+            - api.read
+            - api.write
+          auth_methods:
+            - bearer
+            - authorization_code

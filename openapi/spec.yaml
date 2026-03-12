@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: Demo Customer API
+  version: 1.0.0
+servers:
+  - url: https://api.customer.example
+paths:
+  /health:
+    get:
+      operationId: getHealth
+      responses:
+        "200":
+          description: OK
+  /orders:
+    get:
+      operationId: listOrders
+      responses:
+        "200":
+          description: OK

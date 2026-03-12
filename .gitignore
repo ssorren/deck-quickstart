@@ -1,0 +1,5 @@
+# Generated state artifacts
+build/*.yaml
+
+# Local environment files
+.env

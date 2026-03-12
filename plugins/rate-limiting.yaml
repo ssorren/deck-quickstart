@@ -1,0 +1,10 @@
+add-plugins:
+  - selectors:
+      - $.services[*]
+    overwrite: false
+    plugins:
+      - name: rate-limiting
+        config:
+          minute: 100
+          policy: local
+          limit_by: ip
